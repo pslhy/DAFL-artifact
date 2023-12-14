@@ -351,6 +351,12 @@ def check_nm_2017_14940(buf):
             return True
     return False
 
+def check_nm_2017_15025(buf):
+    if "FPE" in buf:
+        if get_crash_func(buf) == "decode_line_info":
+            return True
+    return False
+
 def check_readelf_2017_16828(buf):
     if "heap-buffer-overflow" in buf:
         if "display_debug_frames" in buf:
