@@ -4,7 +4,7 @@ DIRNAME="binutils-515f23e"
 VERSION="515f23e"
 CONFIG_OPTIONS="--disable-shared --disable-gdb \
                  --disable-libdecnumber --disable-readline \
-                 --disable-sim LIBS='-ldl -lutil'"
+                 --disable-sim --disable-ld"
 
 rm -rf $DIRNAME
 git clone $GIT_URL $DIRNAME
