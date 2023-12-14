@@ -11,7 +11,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 cd /benchmark
 program="binutils-515f23e"
 binaries="nm"
-build_target $program $CC $CXX "-m32"
+build_target $program $CC $CXX " "
 cd /benchmark/RUNDIR-$program/$program
 make clean
 yes | /smake/smake --init
