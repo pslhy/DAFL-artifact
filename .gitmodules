@@ -1,6 +1,6 @@
 [submodule "DAFL"]
 	path = DAFL
-	url = https://github.com/prosyslab/DAFL.git
+	url = git@github.com:pslhy/DAFL.git
 [submodule "sparrow"]
 	path = sparrow
 	url = https://github.com/prosyslab/sparrow.git
