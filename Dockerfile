@@ -89,6 +89,7 @@ COPY scripts/run_sparrow.py /benchmark/scripts
 RUN python3 /benchmark/scripts/run_sparrow.py all thin
 
 # Setup DAFL.
+RUN mkdir /fuzzer
 WORKDIR /fuzzer
 COPY docker-setup/setup_DAFL.sh /fuzzer/setup_DAFL.sh
 RUN ./setup_DAFL.sh

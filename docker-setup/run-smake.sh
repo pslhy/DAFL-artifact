@@ -10,7 +10,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 ### Program: binutils-515f23e
 cd /benchmark
 program="binutils-515f23e"
-binaries="nm-new"
+binaries="nm"
 build_target $program $CC $CXX " "
 cd /benchmark/RUNDIR-$program/$program
 make clean
@@ -18,7 +18,7 @@ yes | /smake/smake --init
 /smake/smake -j 1
 cd /benchmark/RUNDIR-$program
 for binary in $binaries; do
-    cp -r binutils-515f23e/sparrow/binutils/$binary /benchmark/smake-out/$binary-515f23e || exit 1
+    cp -r binutils-515f23e/sparrow/binutils/$binary-new /benchmark/smake-out/$binary || exit 1
 done
 cd /benchmark
 rm -rf /benchmark/RUNDIR*
