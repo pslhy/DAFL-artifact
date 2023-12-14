@@ -58,6 +58,10 @@ WORKDIR /benchmark
 # To use ASAN during the benchmark build, these option are needed.
 ENV ASAN_OPTIONS=allocator_may_return_null=1,detect_leaks=0
 
+COPY docker-setup/benchmark-project /benchmark/project
+COPY docker-setup/build_bench_common.sh /benchmark/build_bench_common.sh
+COPY docker-setup/target/line /benchmark/target/line
+
 # Run smake on bechmarks to prepare input for sparrow
 COPY docker-setup/patches /benchmark/patches
 COPY smake/ /smake
