@@ -10,7 +10,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 ### Program: binutils-515f23e
 cd /benchmark
 program="binutils-515f23e"
-binaries="nm"
+binaries="nm-new"
 build_target $program $CC $CXX " "
 cd /benchmark/RUNDIR-$program/$program
 make clean
