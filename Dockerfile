@@ -62,6 +62,12 @@ COPY docker-setup/benchmark-project /benchmark/project
 COPY docker-setup/build_bench_common.sh /benchmark/build_bench_common.sh
 COPY docker-setup/target/line /benchmark/target/line
 
+RUN apt-get install -yy \ 
+    git vim python3-pip gdb \
+    default-jdk m4 xxd clang flex bison autopoint gperf texinfo libjpeg-dev \
+    nasm libass-dev libmp3lame-dev dh-autoreconf unzip libopus-dev \
+    libtheora-dev libvorbis-dev rsync python3-dev python-dev
+
 # Run smake on bechmarks to prepare input for sparrow
 COPY docker-setup/patches /benchmark/patches
 COPY smake/ /smake
@@ -73,12 +79,6 @@ RUN rm /benchmark/run-smake.sh
 COPY docker-setup/setup_Sparrow.sh /setup_Sparrow.sh
 RUN /setup_Sparrow.sh
 RUN rm /setup_Sparrow.sh
-
-RUN apt-get install -yy \ 
-    git vim python3-pip gdb \
-    default-jdk m4 xxd clang flex bison autopoint gperf texinfo libjpeg-dev \
-    nasm libass-dev libmp3lame-dev dh-autoreconf unzip libopus-dev \
-    libtheora-dev libvorbis-dev rsync python3-dev python-dev
 
 # Analyze benchmark with Sparrow.
 RUN mkdir /benchmark/scripts
