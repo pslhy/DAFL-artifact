@@ -74,6 +74,12 @@ COPY docker-setup/setup_Sparrow.sh /setup_Sparrow.sh
 RUN /setup_Sparrow.sh
 RUN rm /setup_Sparrow.sh
 
+RUN apt-get install -yy \ 
+    git vim python3-pip gdb \
+    default-jdk m4 xxd clang flex bison autopoint gperf texinfo libjpeg-dev \
+    nasm libass-dev libmp3lame-dev dh-autoreconf unzip libopus-dev \
+    libtheora-dev libvorbis-dev rsync python3-dev python-dev
+
 # Analyze benchmark with Sparrow.
 RUN mkdir /benchmark/scripts
 COPY scripts/benchmark.py /benchmark/scripts
